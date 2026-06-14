@@ -17,17 +17,16 @@ return {
   end),
   runFn5 = (function(fn)
     return function(a)
-      return function(b)
-        return function(c) return function(d) return function(e) return fn(a, b, c, d, e) end end end
-      end
+      return function(b) return function(c) return function(d) return function(e) return fn(a, b, c, d, e) end end end end
     end
   end),
   runFn6 = (function(fn)
     return function(a)
       return function(b)
-        return function(c)
-          return function(d) return function(e) return function(f) return fn(a, b, c, d, e, f) end end end
-        end
+        return
+          function(c)
+            return function(d) return function(e) return function(f) return fn(a, b, c, d, e, f) end end end
+          end
       end
     end
   end),
@@ -48,9 +47,7 @@ return {
         return function(c)
           return function(d)
             return function(e)
-              return function(f)
-                return function(g) return function(h) return fn(a, b, c, d, e, f, g, h) end end
-              end
+              return function(f) return function(g) return function(h) return fn(a, b, c, d, e, f, g, h) end end end
             end
           end
         end
